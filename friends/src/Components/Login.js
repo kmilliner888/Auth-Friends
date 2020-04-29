@@ -18,7 +18,7 @@ const Login = (props) => {
             .post("/api/login", user)
             .then(response => {
                 console.log("handleSubmit response", response);
-                localStorage.setItem("token", response.data);
+                localStorage.setItem("token", response.data.payload);
                 props.history.push("/protected");
             })
             .catch(error => {
